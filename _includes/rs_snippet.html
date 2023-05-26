@@ -1,0 +1,38 @@
+<style>
+    .snippet_{{ post.id | slugify: "ascii" }}::after {
+        background-image: 
+        radial-gradient(ellipse closest-side, var(--c-snippetBackgroundExternal), var(--c-snippetBackgroundInternal)),
+        url(
+            {% if post.image_dir == "default" %}
+                {% assign url = post.path |  split: "." | first | split: "/" | last %}
+                {{ site.url }}/assets/posts/{{ url }}/background_image.png
+            {% else if post.image_dir != nil %}
+                {{ site.url }}/{{ post.image_dir }}
+            {% endif %}
+        );
+    }
+    </style>
+<a class="snippet__link" href="{{ post.url }}">
+    <section class="snippet__data">
+        <div class="icon">
+            <img src="{{post.title_img}}">
+        </div>
+        <div class="text">
+            <h2 class="snippet__data__header">{{post.title }}
+                <span class="snippet__data__metadata__conf">— {{ post.conf }}</span>
+            </h2>
+            {% if post.author != nil %}
+                    <p class="snippet__data__author">{{ post.author }}</p>
+            {% endif %}
+            <div class="snippet__data__ext">
+                {% if post.code != nil %}
+                    <i class="fa-solid fa-code"></i>
+                {% endif %}
+                {% if post.pdf != nil %}
+                    <i class="fa-solid fa-file-pdf"></i>
+                {% endif %}
+            </div>
+            <p class="snippet__data__text">{{ post.excerpt | strip_html }}</p>
+        </div>
+    </section>
+</a> 

@@ -1,0 +1,58 @@
+// =============================
+// header.scss
+// =============================
+// Used for page header.
+
+.header{
+
+    @include flexbox{
+        flex-direction: column;
+    };
+
+    .description{
+
+        .icons > a {
+            padding : 0 .5rem;
+            text-decoration: none
+        }
+
+        &__link{
+
+            text-decoration: none;
+            color: var(--c-themePrimaryDark);
+            transition: $t-smooth;
+
+            &:hover{
+                letter-spacing: .5rem;
+            }
+            h1{
+                margin: 0;
+            }
+            &__img{
+                filter: var(--c-headerImageFilter);
+                height: 10em;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    @include flexbox{
+        flex-direction: column;
+    };
+
+    color: var(--c-feed-title);
+
+    text-align: center;
+    padding: 2rem 4rem;
+    min-width: 80%;
+
+    h1{
+        margin: 1rem 0 0 0;
+
+        @include for-size('tablet'){
+            margin: 0;
+        }
+    }
+
+
+}
