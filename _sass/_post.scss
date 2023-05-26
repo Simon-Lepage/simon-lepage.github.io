@@ -47,21 +47,11 @@ $postMaxWidth: 1000px;
         &__divider{
             color: var(--c-postMeta);
             margin: 0 1rem !important;
-
-            @include for-size('tablet'){
-                display: none;
-            }
         }
 
         i {
             margin: .4rem .2rem;
             font-size: var(--s-p);
-        }
-
-
-
-        @include for-size('tablet'){
-            flex-direction: column;
         }
     }
 
