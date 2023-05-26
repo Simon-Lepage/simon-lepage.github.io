@@ -30,7 +30,7 @@
             }
             &__img{
                 filter: var(--c-headerImageFilter);
-                height: 10em;
+                height: 8rem;
                 border-radius: 50%;
             }
         }
@@ -43,7 +43,7 @@
     color: var(--c-feed-title);
 
     text-align: center;
-    padding: 2rem 4rem;
+    padding: 2rem 1rem;
     min-width: 80%;
 
     h1{
@@ -54,5 +54,8 @@
         }
     }
 
+    p {
+        text-align: center;
+    }
 
 }
