@@ -30,7 +30,7 @@ github_username:  simon-lepage
 
 
 # Build settings
-theme: jekyll-theme-simplex
+theme: 
 plugins:
   - jekyll-feed
 
