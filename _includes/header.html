@@ -17,12 +17,17 @@
                     <i class="fa-brands fa-github" style="font-size:24px"></i>
                 </a>
             {% endif %}
+            {% if site.huggingface_username != nil %}
+                <a href="https://huggingface.co/{{site.huggingface_username}}">
+                    <i class="fa-solid fa-face-smile-beam" style="font-size:24px"></i>
+                    <!-- <i style="font-size:24px">🤗</i> -->
+                </a>
+            {% endif %}
             {% if site.twitter_username != nil %}
                 <a href="http://twitter.com/{{site.twitter_username}}">
                     <i class="fa-brands fa-twitter" style="font-size:24px"></i>
                 </a>
             {% endif %}
-
             {% if site.email != nil %}
                 <a href="mailto:{{site.email}}">
                     <i class="fa-solid fa-envelope" style="font-size:24px"></i>

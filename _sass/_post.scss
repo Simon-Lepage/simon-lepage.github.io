@@ -66,6 +66,12 @@ $postMaxWidth: 1000px;
         }
     }
 
+    &__content > .abstract {
+        border-color: var(--c-subtitle);
+        border-left: 3px solid;
+        padding-left: 1em;
+    }
+
     &__navigator{
 
         margin-top: 1rem;

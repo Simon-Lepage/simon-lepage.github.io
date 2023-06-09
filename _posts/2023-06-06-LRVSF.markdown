@@ -1,0 +1,26 @@
+---
+layout: post
+title:  "Weakly-Supervised Conditional Embedding for Referred Visual Search"
+author: Simon Lepage, Jérémie Mary, David Picard
+date: 2023-06-06
+conf: arXiv
+title_img: /assets/thumbnails/LRVSF.png
+code: https://github.com/Simon-Lepage/CondViT-LRVSF
+dataset: https://huggingface.co/datasets/Slep/LAION-RVS-Fashion
+demo: https://huggingface.co/spaces/Slep/CondViT-LRVSF-Demo
+pdf: https://arxiv.org/abs/2306.02928
+tags: research visual-search
+---
+
+<p class="abstract">
+This paper presents a new approach to image similarity search in the context of fashion, a domain with inherent ambiguity due to the multiple ways in which images can be considered similar. We introduce the concept of Referred Visual Search (RVS), where users provide additional information to define the desired similarity. We present a new dataset, LAION-RVS-Fashion, consisting of 272K fashion products with 842K images extracted from LAION, designed explicitly for this task. We then propose an innovative method for learning conditional embeddings using weakly-supervised training, achieving a 6% increase in Recall at one (R@1) against a gallery with 2M distractors, compared to classical approaches based on explicit attention and filtering. The proposed method demonstrates robustness, maintaining similar R@1 when dealing with 2.5 times as many distractors as the baseline methods. We believe this is a step forward in the emerging field of Referred Visual Search both in terms of accessible data and approach. 
+</p>
+
+```
+@article{lepage2023condvit,
+  title={Weakly-Supervised Conditional Embedding for Referred Visual Search},
+  author={Lepage, Simon and Mary, Jérémie and Picard, David},
+  journal={arXiv:2306.02928},
+  year={2023}
+}
+```

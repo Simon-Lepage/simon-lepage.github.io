@@ -28,11 +28,17 @@
                 {% if post.code != nil %}
                     <i class="fa-solid fa-code"></i>
                 {% endif %}
+                {% if post.dataset != nil %}
+                    <i class="fa-solid fa-database"></i>
+                {% endif %}
                 {% if post.pdf != nil %}
                     <i class="fa-solid fa-file-pdf"></i>
                 {% endif %}
+                {% if post.demo != nil %}
+                    <i class="fa-solid fa-play"></i>
+                {% endif %}
             </div>
-            <p class="snippet__data__text">{{ post.excerpt | strip_html }}</p>
+            <p class="snippet__data__text">{{ post.excerpt | strip_html | truncatewords: 60 }}</p>
         </div>
     </section>
 </a> 

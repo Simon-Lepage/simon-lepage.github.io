@@ -15,8 +15,16 @@ layout: default
             <a href={{page.code}}><i class="fa-solid fa-code"></i></a>
             <p class="post__meta__divider">·</p>
         {% endif %}
+        {% if page.dataset != nil %}
+            <a href={{page.dataset}}><i class="fa-solid fa-database"></i></a>
+            <p class="post__meta__divider">·</p>
+        {% endif %}
+        {% if page.demo != nil %}
+            <a href={{page.demo}}><i class="fa-solid fa-play"></i></a>
+            <p class="post__meta__divider">·</p>
+        {% endif %}
         {% if page.pdf != nil %}
-            <a href={{page.code}}><i class="fa-solid fa-file-pdf"></i></a>
+            <a href={{page.pdf}}><i class="fa-solid fa-file-pdf"></i></a>
             <p class="post__meta__divider">·</p>
         {% endif %}
         <p>{{ page.conf }}</p>
