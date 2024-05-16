@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Weakly-Supervised Conditional Embedding for Referred Visual Search"
+title:  "LRVS-Fashion: Extending Visual Search with Referring Instructions"
 author: Simon Lepage, Jérémie Mary, David Picard
 date: 2023-06-06
 conf: arXiv
@@ -13,12 +13,22 @@ tags: research visual-search
 ---
 
 <p class="abstract">
-This paper presents a new approach to image similarity search in the context of fashion, a domain with inherent ambiguity due to the multiple ways in which images can be considered similar. We introduce the concept of Referred Visual Search (RVS), where users provide additional information to define the desired similarity. We present a new dataset, LAION-RVS-Fashion, consisting of 272K fashion products with 842K images extracted from LAION, designed explicitly for this task. We then propose an innovative method for learning conditional embeddings using weakly-supervised training, achieving a 6% increase in Recall at one (R@1) against a gallery with 2M distractors, compared to classical approaches based on explicit attention and filtering. The proposed method demonstrates robustness, maintaining similar R@1 when dealing with 2.5 times as many distractors as the baseline methods. We believe this is a step forward in the emerging field of Referred Visual Search both in terms of accessible data and approach. 
+This paper introduces a new challenge for image similarity search in the context of
+fashion, addressing the inherent ambiguity in this domain stemming from complex
+images. We present Referred Visual Search (RVS), a task allowing users to define
+more precisely the desired similarity, following recent interest in the industry. We
+release a new large public dataset, LRVS-Fashion, consisting of 272k fashion
+products with 842k images extracted from fashion catalogs, designed explicitly
+for this task. However, unlike traditional visual search methods in the industry,
+we demonstrate that superior performance can be achieved by bypassing explicit
+object detection and adopting weakly-supervised conditional contrastive learning
+on image tuples. Our method is lightweight and demonstrates robustness, reaching
+Recall at one superior to strong detection-based baselines against 2M distractors.
 </p>
 
-```
-@article{lepage2023condvit,
-  title={Weakly-Supervised Conditional Embedding for Referred Visual Search},
+```bibtex
+@article{lepage2023lrvsf,
+  title={LRVS-Fashion: Extending Visual Search with Referring Instructions},
   author={Lepage, Simon and Mary, Jérémie and Picard, David},
   journal={arXiv:2306.02928},
   year={2023}
