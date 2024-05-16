@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: with_compact_header
 ---
 
 <article class="post">
@@ -7,51 +7,47 @@ layout: default
     <div class="post__title">
         <h1 class="post__title__text">{{ page.title }}</h1>
         {% if page.author != nil %}
-                <p class="post__title__author">{{ page.author }}</p>
+        <p class="post__title__author">{{ page.author }}</p>
         {% endif %}
     </div>
-    <div class="post__meta"> 
+    <div class="post__meta">
         {% if page.code != nil %}
-            <a href={{page.code}}><i class="fa-solid fa-code"></i></a>
-            <p class="post__meta__divider">·</p>
+        <a href={{page.code}}><i class="fa-solid fa-code"></i></a>
+        <p class="post__meta__divider">·</p>
         {% endif %}
         {% if page.dataset != nil %}
-            <a href={{page.dataset}}><i class="fa-solid fa-database"></i></a>
-            <p class="post__meta__divider">·</p>
+        <a href={{page.dataset}}><i class="fa-solid fa-database"></i></a>
+        <p class="post__meta__divider">·</p>
         {% endif %}
         {% if page.demo != nil %}
-            <a href={{page.demo}}><i class="fa-solid fa-play"></i></a>
-            <p class="post__meta__divider">·</p>
+        <a href={{page.demo}}><i class="fa-solid fa-play"></i></a>
+        <p class="post__meta__divider">·</p>
         {% endif %}
         {% if page.pdf != nil %}
-            <a href={{page.pdf}}><i class="fa-solid fa-file-pdf"></i></a>
-            <p class="post__meta__divider">·</p>
+        <a href={{page.pdf}}>
+            <p>{{ page.conf }}</p>
+        </a>
         {% endif %}
-        <p>{{ page.conf }}</p>
     </div>
 
     {% if page.prevPart != nil or page.nextPart != nil %}
-        <div class="post__navigator">
-            <div
-                class="post__navigator__buttons"
-                {% if page.prevPart == nil %}
-                    style="justify-content: flex-end;"
-                {% endif %}
-            >
-                {% if page.prevPart != nil %}
-                    <a href="{% link {{ page.prevPart }} %}">
-                        <img  class="arrow-left" src="{{ site.url }}/assets/img/icons/arrow_left.svg"/>
-                        Previous
-                    </a>
-                {% endif %}
-                {% if page.nextPart != nil %}
-                    <a href="{% link {{ page.nextPart }} %}">
-                        Next
-                        <img class="arrow-right" src="{{ site.url }}/assets/img/icons/arrow_right.svg"/>
-                    </a>
-                {% endif %}
-            </div>
+    <div class="post__navigator">
+        <div class="post__navigator__buttons" {% if page.prevPart==nil %} style="justify-content: flex-end;" {% endif
+            %}>
+            {% if page.prevPart != nil %}
+            <a href="{% link {{ page.prevPart }} %}">
+                <img class="arrow-left" src="{{ site.url }}/assets/img/icons/arrow_left.svg" />
+                Previous
+            </a>
+            {% endif %}
+            {% if page.nextPart != nil %}
+            <a href="{% link {{ page.nextPart }} %}">
+                Next
+                <img class="arrow-right" src="{{ site.url }}/assets/img/icons/arrow_right.svg" />
+            </a>
+            {% endif %}
         </div>
+    </div>
     {% endif %}
 
     <div class="post__content">

@@ -1,13 +1,13 @@
 ---
-layout: default
+layout: with_wide_header
 ---
 
-<section class="feed">    
+<section class="feed">
     <h1>Research <i class="fa-solid fa-laptop"></i></h1>
     {% assign research = site.posts | where_exp: "item", "item.tags contains 'research'" %}
     {% for post in research %}
-        <section class="snippet snippet_{{ post.id | slugify: "ascii" }}">
-            {% include rs_snippet.html post=post %}
-        </section>
+    <section class="snippet snippet_{{ post.id | slugify: " ascii" }}">
+        {% include rs_snippet.html post=post %}
+    </section>
     {% endfor %}
 </section>

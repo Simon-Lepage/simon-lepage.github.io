@@ -3,32 +3,36 @@
 // =============================
 // Used for page header.
 
-.header{
+.header_wide {
 
-    @include flexbox{
+    @include flexbox {
         flex-direction: column;
-    };
+    }
 
-    .description{
+    ;
 
-        .icons > a {
-            padding : 0 .5rem;
-            text-decoration: none
+    .description {
+
+        .icons>a {
+            padding: 0 .5rem;
+            text-decoration: none;
+            font-size:24px;
         }
 
-        &__link{
-
+        &__link {
             text-decoration: none;
             color: var(--c-themePrimaryDark);
             transition: $t-smooth;
 
-            &:hover{
+            &:hover {
                 letter-spacing: .5rem;
             }
-            h1{
+
+            h1 {
                 margin: 0;
             }
-            &__img{
+
+            &__img {
                 filter: var(--c-headerImageFilter);
                 height: 8rem;
                 border-radius: 50%;
@@ -36,9 +40,11 @@
         }
     }
 
-    @include flexbox{
+    @include flexbox {
         flex-direction: column;
-    };
+    }
+
+    ;
 
     color: var(--c-feed-title);
 
@@ -46,16 +52,85 @@
     padding: 2rem 1rem;
     min-width: 80%;
 
-    h1{
+    h1 {
         margin: 1rem 0 0 0;
 
-        @include for-size('tablet'){
+        @include for-size('tablet') {
             margin: 0;
         }
     }
 
     p {
         text-align: center;
+    }
+}
+
+// =============================
+// header.scss
+// =============================
+// Used for page header.
+
+.header_compact { 
+    width: 100%;
+    margin-bottom: 1em;
+    position: sticky;
+    top: 0;
+    background-color: var(--c-pageBackground);
+    
+    .description {
+        position: relative;
+        
+        // Positioning
+        .header-box {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            padding: 0 .3em;
+        }
+        .header-box:last-child>.icons { margin-right: auto; }
+        .header-box:first-child>a { margin-left: auto; }
+        .site-logo { flex: 0.1; }
+
+        @include flexbox {
+            flex-direction: row;
+        }
+
+        // Styling
+        .icons {
+            line-height: 1em; // Explicit line height to center the icons
+        }
+
+        .icons>a {
+            padding: 0 .2rem;
+            text-decoration: none;
+            font-size: 1em;
+        }
+
+        &__link {
+            text-decoration: none;
+
+            h1 {
+                font-size: 1em;
+            }
+
+            &__img {
+                margin: 0;
+                filter: var(--c-headerImageFilter);
+                height: 2em;
+                border-radius: 50%;
+            }
+        }
+
+        // Underline
+        &::after{
+            content: '';
+            position: absolute; 
+            bottom: 0; 
+            left: 50%;
+            width: 20%;
+            transform: translateX(-50%);
+            border-bottom: solid var(--c-linkVisited) 0.5px;
+        }
     }
 
 }
