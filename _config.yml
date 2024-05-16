@@ -18,7 +18,8 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-logo_img: /assets/images/avatar.png
+logo_img: /assets/img/avatar.png
+favicon: /assets/img/favicon.png
 title: Simon Lepage
 email: simon.lepage@enpc.fr
 description: >- # this means to ignore newlines until "baseurl:"
