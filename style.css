@@ -116,7 +116,6 @@ h1 {
 
 .links a:hover, .links a:focus-visible {
     background: var(--surface);
-    color: var(--accent);
 }
 
 .links a:focus-visible {
@@ -223,6 +222,21 @@ h1 {
     color: var(--muted);
 }
 
+.pixel-reveal {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: repeat(var(--columns), var(--tile-size));
+    grid-auto-rows: var(--tile-size);
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.pixel-reveal span {
+    background: var(--tile-color);
+}
+
 @media (min-width: 48rem) {
     .page {
         width: min(100% - 6rem, 70rem);
@@ -239,38 +253,17 @@ h1 {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    .hero, .links, .career {
-        animation: arrive 650ms both;
+    .pixel-reveal span {
+        animation: pixel-clear 100ms steps(1, end) var(--tile-delay) both;
     }
 
-    .links {
-        animation-delay: 80ms;
-    }
-
-    .career {
-        animation-delay: 160ms;
+    @keyframes pixel-clear {
+        to {
+            opacity: 0;
+        }
     }
 
     a {
         transition: color 180ms ease, background-color 180ms ease;
-    }
-
-    .arrow {
-        transition: transform 180ms ease;
-    }
-
-    a:hover .arrow, a:focus-visible .arrow {
-        transform: translate(2px, -2px);
-    }
-
-    @keyframes arrive {
-        from {
-            opacity: 0;
-            transform: translateY(12px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
     }
 }
