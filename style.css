@@ -1,0 +1,276 @@
+:root {
+    color-scheme: dark;
+    --background: #101013;
+    --surface: #1a1a1e;
+    --border: #27272b;
+    --text: #fafaf4;
+    --muted: #a1a1aa;
+    --accent: #ff5229;
+    --mono: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+    -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+    background: var(--accent);
+    color: var(--background);
+}
+
+a {
+    color: inherit;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.25em;
+}
+
+a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 5px;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+}
+
+.page {
+    width: min(100% - 3rem, 70rem);
+    margin: 0 auto;
+    padding-bottom: 4rem;
+}
+
+.hero {
+    padding: clamp(3.5rem, 9vw, 7.5rem) 0 3rem;
+}
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.09em;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.status-mark {
+    width: 0.5rem;
+    height: 0.5rem;
+    background: var(--accent);
+}
+
+h1 {
+    margin: 1.25rem 0 1rem;
+    font-size: clamp(3.3rem, 8vw, 7.5rem);
+    font-weight: 500;
+    letter-spacing: -0.065em;
+    line-height: 1.06;
+}
+
+.accent {
+    color: var(--accent);
+}
+
+.hero-role {
+    color: var(--muted);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+.links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr));
+    gap: 1px;
+    border: 1px solid var(--border);
+    background: var(--border);
+}
+
+.links a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    min-height: 4.25rem;
+    background: var(--background);
+    padding: 1rem;
+    font-size: 0.875rem;
+    text-decoration: none;
+}
+
+.links a > span {
+    min-width: 0;
+}
+
+.links a:hover, .links a:focus-visible {
+    background: var(--surface);
+    color: var(--accent);
+}
+
+.links a:focus-visible {
+    outline-offset: -3px;
+}
+
+.arrow {
+    width: 1rem;
+    height: 1rem;
+    flex: none;
+}
+
+.career {
+    margin-top: 3.5rem;
+}
+
+.career h2 {
+    margin-bottom: 1.5rem;
+}
+
+.timeline {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.career-entry {
+    position: relative;
+    padding: 0 0 2.5rem 3rem;
+}
+
+.career-entry:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 2.75rem;
+    bottom: 0.5rem;
+    left: 1rem;
+    width: 1px;
+    background: var(--border);
+}
+
+.career-entry:last-child {
+    padding-bottom: 0;
+}
+
+.career-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+}
+
+.dates {
+    margin-bottom: 0.5rem;
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    line-height: 2rem;
+}
+
+.career-entry h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.organization {
+    margin-top: 0.25rem;
+}
+
+.career-description {
+    margin-top: 0.75rem;
+    color: var(--muted);
+}
+
+.advisors {
+    margin-top: 0.75rem;
+    color: var(--muted);
+    font-size: 0.875rem;
+}
+
+.advisors a:hover, .advisors a:focus-visible {
+    color: var(--text);
+}
+
+.thesis {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-height: 2.75rem;
+    margin-top: 0.75rem;
+    color: var(--accent);
+    font-size: 0.875rem;
+    text-decoration: none;
+}
+
+.thesis:hover, .thesis:focus-visible {
+    text-decoration: underline;
+}
+
+.file-type {
+    color: var(--muted);
+}
+
+@media (min-width: 48rem) {
+    .page {
+        width: min(100% - 6rem, 70rem);
+        padding-bottom: 6rem;
+    }
+
+    .links a {
+        padding: 1.25rem;
+    }
+
+    .career {
+        margin-top: 4rem;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .hero, .links, .career {
+        animation: arrive 650ms both;
+    }
+
+    .links {
+        animation-delay: 80ms;
+    }
+
+    .career {
+        animation-delay: 160ms;
+    }
+
+    a {
+        transition: color 180ms ease, background-color 180ms ease;
+    }
+
+    .arrow {
+        transition: transform 180ms ease;
+    }
+
+    a:hover .arrow, a:focus-visible .arrow {
+        transform: translate(2px, -2px);
+    }
+
+    @keyframes arrive {
+        from {
+            opacity: 0;
+            transform: translateY(12px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
